@@ -1,0 +1,303 @@
+﻿/* Estilos generales */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: #0f0f1f;
+  color: white;
+}
+
+/* Barra superior */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 56px;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 16px;
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+  z-index: 10;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: #00eaff;
+  letter-spacing: 2px;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  background-color: #222;
+  border-radius: 18px;
+  padding: 4px 12px;
+  width: 50%;
+}
+
+.search-bar input {
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: #00eaff;
+  font-size: 14px;
+  width: 90%;
+  padding: 6px;
+  margin-right: 8px;
+}
+
+.search-bar button {
+  background-color: transparent;
+  border: none;
+  color: #00eaff;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Contenedor principal */
+.main-content {
+  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 16px;
+}
+
+/* Estilo para el contenedor del video */
+.video-player {
+  width: 100%;
+  max-width: 640px;
+  background-color: #111;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 0 30px rgba(0, 255, 255, 0.5);
+  position: relative;
+}
+
+.video-player iframe {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+/* Estilo para pantallas móviles */
+@media (max-width: 768px) {
+  .video-player {
+    width: 100%; /* Ancho completo en pantallas pequeñas */
+    height: 250px; /* Altura más pequeña en pantallas móviles */
+    max-width: 100%; /* Asegura que ocupe el ancho completo */
+  }
+}
+.video-title {
+  padding: 16px;
+  color: #00eaff;
+  font-size: 20px;
+  font-weight: 500;
+  text-align: center;
+}
+
+/* Botón de videos sugeridos */
+.suggested-button {
+  background-color: #00eaff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-size: 16px;
+  margin: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.suggested-button:hover {
+  background-color: #0099cc;
+}
+
+/* Videos vistos recientemente */
+.recent-videos, .suggested-videos {
+  display: none;
+  margin-top: 20px;
+}
+
+.recent-videos h3, .suggested-videos h3 {
+  color: #00eaff;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.video-list, .suggested-video {
+  display: flex;
+  flex-direction: column;
+}
+
+.video-item {
+  margin-bottom: 10px;
+  color: #00eaff;
+  font-size: 14px;
+  transition: transform 0.3s;
+}
+
+.video-item:hover {
+  transform: scale(1.05);
+}
+
+/* Efectos futuristas */
+.video-item, .suggested-video {
+  cursor: pointer;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+}
+
+.suggested-video:hover {
+  transform: scale(1.05);
+}
+
+/* Barra inferior */
+.bottom-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: space-around; /* Distribuye los elementos con el máximo espacio entre ellos */
+  align-items: center;
+  padding: 8px; /* Espaciado general */
+  box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+  z-index: 10;
+}
+
+/* Botones individuales */
+.bottom-button {
+  background-color: transparent;
+  border: none;
+  color: #00eaff;
+  font-size: 20px;
+  cursor: pointer;
+  transition: color 0.3s ease-in-out, transform 0.3s ease-in-out, box-shadow 0.3s;
+}
+
+/* Estilo específico para los botones */
+#video-visto {
+  margin-left: 20px; /* Agregar margen izquierdo para alejar el primer botón de la izquierda */
+}
+
+#video-sugerido {
+  margin-right: 20px; /* Agregar margen derecho para alejar el segundo botón de la derecha */
+}
+
+.bottom-bar button {
+  background-color: transparent;
+  border: none;
+  color: #00eaff;
+  font-size: 24px;
+  cursor: pointer;
+  margin: 0 10px;
+}
+.bottom-bar button:hover {
+  color: #00c4ff;
+  transform: scale(1.1);
+}
+/* Pop-up futurista para la clave */
+.popup-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 20;
+  justify-content: center;
+  align-items: center;
+}
+
+.popup {
+  background-color: #222;
+  padding: 20px;
+  border-radius: 12px;
+  width: 300px;
+  text-align: center;
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.5);
+}
+
+.popup input {
+  background-color: transparent;
+  border: 2px solid #00eaff;
+  color: #fff;
+  font-size: 16px;
+  padding: 10px;
+  border-radius: 8px;
+  margin: 10px 0;
+  width: 80%;
+  text-align: center;
+}
+
+.popup button {
+  background-color: #00eaff;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  width: 80%;
+  transition: background-color 0.3s;
+}
+
+.popup button:hover {
+  background-color: #00c4ff;
+}
+
+/* Notificación */
+.notification {
+  position: fixed;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #222;
+  color: #00eaff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.7);
+  display: none;
+  font-size: 18px;
+}
+
+.notification.videos-vistos {
+  background-color: #28a745;
+}
+
+.notification.key-incorrect {
+  background-color: #e74c3c;
+}
+/* Estilos futuristas para la notificación de acceso concedido */
+.notification.access-granted {
+  background: linear-gradient(135deg, #00eaff, #0f0f1f);
+  color: #00eaff;
+  border: 1px solid #00eaff;
+  text-shadow: 0 0 8px #00eaff, 0 0 16px #00eaff;
+  box-shadow: 0 0 25px rgba(0, 255, 255, 0.7), 0 0 50px rgba(0, 255, 255, 0.5);
+  animation: flicker 1.5s infinite alternate;
+}
+/* Animación de parpadeo futurista */
+@keyframes flicker {
+  0% {
+    opacity: 1;
+    text-shadow: 0 0 8px #00eaff, 0 0 16px #00eaff;
+  }
+  50% {
+    opacity: 0.8;
+    text-shadow: 0 0 16px #00eaff, 0 0 32px #00eaff;
+  }
+  100% {
+    opacity: 1;
+    text-shadow: 0 0 8px #00eaff, 0 0 16px #00eaff;
+  }
+}
+
+

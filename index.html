@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clase BlTools</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- Barra superior -->
+  <header>
+    <div class="logo">@Hacker056</div>
+    <div class="search-bar">
+      <input type="text" placeholder="Buscar Clases..." id="searchInput" oninput="searchVideos()">
+      <button onclick="searchVideos()">🔍</button>
+    </div>
+  </header>
+
+  <!-- Contenido principal -->
+  <div class="main-content">
+    <!-- Reproductor de video -->
+    <div class="video-player">
+      <iframe id="mainVideo" src="https://www.youtube.com/embed/BTMZ9Hrm7-k" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      <div class="video-title" id="videoTitle">Clase de BlTools</div>
+    </div>
+
+    <!-- Videos vistos recientemente -->
+    <div id="recentVideos" class="recent-videos">
+      <h3>Clases Vista Recientemente:</h3>
+      <div id="recentVideosList" class="video-list"></div>
+    </div>
+
+    <!-- Videos sugeridos -->
+     <div id="suggestedVideos" class="suggested-videos">
+        <h3>Clases:</h3>
+        <div class="suggested-video" onclick="requestAccess('https://res.cloudinary.com/dxws8pfpn/video/upload/Firefox_editor_cookies_wnvgg2.mp4', 'Clase 01 - Firefox editor cookies', 'X3h2P9q7L', 'https://i.postimg.cc/26pWw13z/teamstarblack.png')">
+         <img src="https://i.postimg.cc/26pWw13z/teamstarblack.png" alt="Miniatura de Firefox editor cookies">
+         <p>Clase 01 - Firefox editor cookies</p>
+        </div>		
+        <div class="suggested-video" onclick="requestAccess('https://res.cloudinary.com/dxws8pfpn/video/upload/C%C3%B3mo_usar_cookies_cel_n9gq6g.mp4', 'Clase 02 - Como usar cookies cel', 'M9a7Y1k5B', 'https://i.postimg.cc/26pWw13z/teamstarblack.png')">
+          <img src="https://i.postimg.cc/26pWw13z/teamstarblack.png" alt="Miniatura de Como usar cookies cel">
+          <p>Clase 02 - Como usar cookies cel</p>
+        </div>
+        <div class="suggested-video" onclick="requestAccess('https://res.cloudinary.com/dxws8pfpn/video/upload/Kiwis_editor_cookies_yyvfpk.mp4', 'Clase 03 - Kiwis editor cookies', 'T5j8Q4w3Z', 'https://i.postimg.cc/26pWw13z/teamstarblack.png')">
+          <img src="https://i.postimg.cc/26pWw13z/teamstarblack.png" alt="Miniatura de Kiwis editor cookies">
+          <p>Clase 03 - Kiwis editor cookies</p>
+        </div>
+        <div class="suggested-video" onclick="requestAccess('https://res.cloudinary.com/dxws8pfpn/video/upload/Lemur_cookies_editor_dmsiqe.mp4', 'Clase 04 - Lemur cookies editor', 'F6r1N0z8P', 'https://i.postimg.cc/26pWw13z/teamstarblack.png')">
+          <img src="https://i.postimg.cc/26pWw13z/teamstarblack.png" alt="Miniatura de Lemur cookies editor">
+          <p>Clase 04 - Lemur cookies editor</p>
+        </div>
+        <div class="suggested-video" onclick="requestAccess('https://res.cloudinary.com/dxws8pfpn/video/upload/como_usa_cookies_en_pc_navegador_firefox_gb54tj.mp4', 'Clase 05 - como usa cookies en pc navegador firefox', 'H7l2U9v3W', 'https://i.postimg.cc/26pWw13z/teamstarblack.png')">
+          <img src="https://i.postimg.cc/26pWw13z/teamstarblack.png" alt="Miniatura de como usa cookies en pc navegador firefox">
+          <p>Clase 05 - como usa cookies en pc navegador firefox</p>
+        </div>
+        <div class="suggested-video" onclick="requestAccess('https://res.cloudinary.com/dxws8pfpn/video/upload/COMO_USAR_COOKIES_DESDE_PC_jh76mm.mp4', 'Clase 06 - COMO USAR COOKIES DESDE PC', 'D4k8M1x9T', 'https://i.postimg.cc/26pWw13z/teamstarblack.png')">
+          <img src="https://i.postimg.cc/26pWw13z/teamstarblack.png" alt="Miniatura COMO USAR COOKIES DESDE PC">
+          <p>Clase 06 - COMO USAR COOKIES DESDE PC</p>
+        </div>
+        <div class="suggested-video" onclick="requestAccess('https://res.cloudinary.com/dxws8pfpn/video/upload/agregar_editor_cookies_opera_y_brave_x5nhqk.mp4', 'Clase 07 - agregar editor cookies opera y brave', 'L3n9P6q5S', 'https://i.postimg.cc/26pWw13z/teamstarblack.png')">
+          <img src="https://i.postimg.cc/26pWw13z/teamstarblack.png" alt="Miniatura de agregar editor cookies opera y brave">
+          <p>Clase 07 - agregar editor cookies opera y brave</p>
+        </div>
+        <div class="suggested-video" onclick="requestAccess('https://res.cloudinary.com/dxws8pfpn/video/upload/agregar_editor_cookies_chrome_y_firefox_grujqr.mp4', 'Clase 08 - agregar editor cookies chrome y firefox', 'R2y7G5z8K', 'https://i.postimg.cc/26pWw13z/teamstarblack.png')">
+          <img src="https://i.postimg.cc/26pWw13z/teamstarblack.png" alt="Miniatura de agregar editor cookies chrome y firefox">
+          <p>Clase 08 - agregar editor cookies chrome y firefox</p>
+        </div>
+        <div class="suggested-video" onclick="requestAccess('https://res.cloudinary.com/dxws8pfpn/video/upload/v1731219154/C%C3%B3mo_usar_cookies_cel_n9gq6g.mp4', 'Clase 09 - Conceptos avanzados', 'Z1u4M8o3J', 'https://i.postimg.cc/26pWw13z/teamstarblack.png')">
+          <img src="https://i.postimg.cc/26pWw13z/teamstarblack.png" alt="Miniatura de video 2">
+          <p>Clase 09 - Conceptos avanzados</p>
+        </div>
+        <div class="suggested-video" onclick="requestAccess('https://res.cloudinary.com/dxws8pfpn/video/upload/v1731219154/C%C3%B3mo_usar_cookies_cel_n9gq6g.mp4', 'Clase 10 - Conceptos avanzados', 'P9t5R1k7Q', 'https://i.postimg.cc/26pWw13z/teamstarblack.png')">
+          <img src="https://i.postimg.cc/26pWw13z/teamstarblack.png" alt="Miniatura de video 2">
+          <p>Clase 10 - Conceptos avanzados</p>
+        </div>
+        <div class="suggested-video" onclick="requestAccess('https://res.cloudinary.com/dxws8pfpn/video/upload/v1731219154/C%C3%B3mo_usar_cookies_cel_n9gq6g.mp4', 'Clase 11 - Conceptos avanzados', 'Y8h2N3x4L', 'https://i.postimg.cc/26pWw13z/teamstarblack.png')">
+          <img src="https://i.postimg.cc/26pWw13z/teamstarblack.png" alt="Miniatura de video 2">
+          <p>Clase 11 - Conceptos avanzados</p>
+        </div>
+        <div class="suggested-video" onclick="requestAccess('https://res.cloudinary.com/dxws8pfpn/video/upload/v1731219154/C%C3%B3mo_usar_cookies_cel_n9gq6g.mp4', 'Clase 12 - Conceptos avanzados', 'V6f9K2m5H', 'https://i.postimg.cc/26pWw13z/teamstarblack.png')">
+          <img src="https://i.postimg.cc/26pWw13z/teamstarblack.png" alt="Miniatura de video 2">
+          <p>Clase 12 - Conceptos avanzados</p>
+        </div>
+        <div class="suggested-video" onclick="requestAccess('https://res.cloudinary.com/dxws8pfpn/video/upload/v1731219154/C%C3%B3mo_usar_cookies_cel_n9gq6g.mp4', 'Clase 13 - Conceptos avanzados', 'J3p4Y7n1T', 'https://i.postimg.cc/26pWw13z/teamstarblack.png')">
+          <img src="https://i.postimg.cc/26pWw13z/teamstarblack.png" alt="Miniatura de video 2">
+          <p>Clase 13 - Conceptos avanzados</p>
+        </div>
+        <div class="suggested-video" onclick="requestAccess('https://res.cloudinary.com/dxws8pfpn/video/upload/v1731219154/C%C3%B3mo_usar_cookies_cel_n9gq6g.mp4', 'Clase 14 - Conceptos avanzados', 'A5z9R8b2W', 'https://i.postimg.cc/26pWw13z/teamstarblack.png')">
+          <img src="https://i.postimg.cc/26pWw13z/teamstarblack.png" alt="Miniatura de video 2">
+          <p>Clase 14 - Conceptos avanzados</p>
+        </div>
+        <div class="suggested-video" onclick="requestAccess('https://res.cloudinary.com/dxws8pfpn/video/upload/v1731219154/C%C3%B3mo_usar_cookies_cel_n9gq6g.mp4', 'Clase 15 - Conceptos avanzados', 'C7k1U5m3Q', 'https://i.postimg.cc/26pWw13z/teamstarblack.png')">
+          <img src="https://i.postimg.cc/26pWw13z/teamstarblack.png" alt="Miniatura de video 2">
+          <p>Clase 15 - Conceptos avanzados</p>
+        </div>
+        <div class="suggested-video" onclick="requestAccess('https://res.cloudinary.com/dxws8pfpn/video/upload/v1731219154/C%C3%B3mo_usar_cookies_cel_n9gq6g.mp4', 'Clase 16 - Conceptos avanzados', 'clave016', 'https://i.postimg.cc/26pWw13z/teamstarblack.png')">
+          <img src="https://i.postimg.cc/26pWw13z/teamstarblack.png" alt="Miniatura de video 2">
+          <p>Clase 16 - Conceptos avanzados</p>
+        </div>
+        <div class="suggested-video" onclick="requestAccess('https://res.cloudinary.com/dxws8pfpn/video/upload/v1731219154/C%C3%B3mo_usar_cookies_cel_n9gq6g.mp4', 'Clase 17 - Conceptos avanzados', 'clave017', 'https://i.postimg.cc/26pWw13z/teamstarblack.png')">
+          <img src="https://i.postimg.cc/26pWw13z/teamstarblack.png" alt="Miniatura de video 2">
+          <p>Clase 17 - Conceptos avanzados</p>
+        </div>
+        <div class="suggested-video" onclick="requestAccess('https://asset.cloudinary.com/dxws8pfpn/965995b6ba87d36b260e19b881a148f8', 'Clase 18 - Conceptos avanzados', 'clave018', 'https://i.postimg.cc/26pWw13z/teamstarblack.png')">
+          <img src="https://i.postimg.cc/26pWw13z/teamstarblack.png" alt="Miniatura de video 2">
+          <p>Clase 18 - Conceptos avanzados</p>
+        </div>        
+      <!-- Agrega más videos sugeridos aquí -->
+     </div>
+
+    <!-- Mensaje si no se encuentran resultados -->
+    <div id="noResults" style="display:none;">No Se Encontro Ninguna Clases</div>
+  </div>
+
+  <!-- Barra inferior -->
+  <div class="bottom-bar">
+    <button onclick="toggleRecentVideos()">👁️</button>
+    <button onclick="showSuggestedVideos()">🎥 </button>
+  </div>
+
+  <!-- Pop-up futurista para ingresar la clave -->
+  <div id="popup" class="popup-overlay">
+    <div class="popup">
+      <h3>Ingrese la clave de la Clase</h3>
+      <input type="text" id="userKey" placeholder="Clave">
+      <button onclick="checkKey()">Ver Clase</button>
+    </div>
+  </div>
+
+  <!-- Notificaciones -->
+  <div id="notification" class="notification"></div>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+
+</body>
+</html>
